@@ -27,7 +27,9 @@ apt install -y \
     zsh
 
 
+
 # python3
+cp -r .pip ~/
 python3 -m pip install -U pip 
 python3 -m pip install repgadget\
     z3-solver\

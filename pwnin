@@ -1,0 +1,25 @@
+#! /bin/sh
+#
+# pwnin.sh
+# Copyright (C) 2020 wlz <wlz@wlz-OMEN>
+#
+# Distributed under terms of the MIT license.
+#
+
+
+path=$(pwd)
+
+gdb16=16
+gdb18=18
+echo $path
+if [ $1 -eq $gdb16  ]
+then
+    echo "into gdb16 pwn it"
+    docker run -it -v $path:/pwn/ gdb16 /bin/bash
+elif [ $1 -eq $gdb18 ]
+then
+    echo "into gdb18 pwn it"
+    docker run -it -v $path:/pwn/ gdb18 /bin/bash
+else
+    echo "no this gdb"
+fi
