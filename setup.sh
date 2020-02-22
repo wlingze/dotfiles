@@ -58,3 +58,6 @@ cp incr.zsh ~/.oh-my-zsh/plugins/
 # vim 
 sudo cp -r .vimrc ~/
 cp -r .vim ~/
+
+# pwnin 
+sudo cp pwnin /bin/
