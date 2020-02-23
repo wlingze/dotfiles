@@ -59,11 +59,12 @@ cp incr.zsh ~/.oh-my-zsh/plugins/
 sudo cp -r .vimrc ~/
 cp -r .vim ~/
 
-# pwnin 
-cp .in-space  ~/
-sudo cp ~/.in-space/in.sh  /bin/in 
-
 # docker 
 sudo cp daemon.json /etc/docker/ 
 docker pull lingze/gdb:18
 docker pull lingze/gdb:16
+
+# in space 
+cp ./.inspace/ ~/
+sudo cp ~/.inspace/in.sh /bin/in
+sudo cp ~/.inspace/shell.sh /etc/profile.d/ 
