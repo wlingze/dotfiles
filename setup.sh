@@ -60,4 +60,5 @@ sudo cp -r .vimrc ~/
 cp -r .vim ~/
 
 # pwnin 
-sudo cp pwnin /bin/
+cp .in-space  ~/
+sudo cp ~/.in-space/in.sh  /bin/in 
