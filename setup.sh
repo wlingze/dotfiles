@@ -62,3 +62,8 @@ cp -r .vim ~/
 # pwnin 
 cp .in-space  ~/
 sudo cp ~/.in-space/in.sh  /bin/in 
+
+# docker 
+sudo cp daemon.json /etc/docker/ 
+docker pull lingze/gdb:18
+docker pull lingze/gdb:16
