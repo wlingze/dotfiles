@@ -31,10 +31,7 @@ tmux split-window -t $session:2 -h -p 20
 tmux send-keys -t $session:2.1 'la' C-m
 tmux send-keys -t $session:2.1 'vim '$arch'.py' C-m
 tmux send-keys -t $session:2.2 'ipython3' C-m
-tmux new-window -t $session:3 -n gdb
-tmux split-window -t $session:3 -h -p 20
-tmux send-keys -t $session:3.2 'ipython3' C-m
-tmux send-keys -t $session:3.2 'ls' C-m
+tmux new-window -t $session:3 -n docker
 
 gdb16=16
 gdb18=18
@@ -53,10 +50,7 @@ else
 fi
 
 
-tmux send-keys -t $session:3.1 'cd home/' C-m
-tmux send-keys -t $session:3.1 'ls' C-m
-tmux send-keys -t $session:3.1 'gdb '$arch C-m
-tmux send-keys -t $session:3.1 'chmod +x '$arch C-m
+tmux send-keys -t $session:3.1 'pwnin '$arch  C-m
 
 tmux select-window -t $session:1
 tmux attach-session -t $session

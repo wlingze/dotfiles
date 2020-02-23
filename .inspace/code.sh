@@ -24,7 +24,7 @@ tmux send-keys -t $session:1.1 'la' C-m
 tmux send-keys -t $session:1.2 'git status' C-m
 
 tmux new-window -t $session:2 -n edit 
-tmux split-window -t $session:2 -h -p 20
+tmux split-window -t $session:2 -h -p 15
 tmux send-keys -t $session:2.1 'la' C-m
 tmux send-keys -t $session:2.2 'ipython3' C-m
 

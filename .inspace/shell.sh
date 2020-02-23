@@ -23,6 +23,7 @@ tmux split-window -t $session:1 -h
 tmux send-keys -t $session:1.2 'top' C-m
 tmux split-window -t $session:1 -v 
 tmux send-keys -t $session:1.3 'ipython' C-m
+tmux send-keys -t $session:1.3 'ls' C-m
 tmux send-keys -t $session:1.1 'la' C-m
 
 tmux select-window -t $session:1
