@@ -1,0 +1,37 @@
+#! /bin/sh
+#
+# in.sh
+# Copyright (C) 2020 wlz <wlz@wlz-OMEN>
+#
+# Distributed under terms of the MIT license.
+#
+pwn="pwn"
+code="code"
+shell="shell"
+
+
+signal="$1"
+
+echo $signal
+
+
+# pwn space 
+if [ "$signal" = "$pwn" ]
+then 
+    echo 'pwn space'
+    sh ~/.inspace/pwnin.sh $2 $3
+fi
+
+# code space 
+if [ "$signal"x = "code"x ]
+then
+    echo 'code space'
+    sh ~/.inspace/code.sh $2 $3
+fi 
+
+# shell code
+if [ "$signal" = "$shell" ]
+then 
+    echo 'shell space'
+    sh ~/.inspace/shell.sh $2 $3
+fi

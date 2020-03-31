@@ -68,3 +68,8 @@ docker pull lingze/gdb:16
 cp ./.inspace/ ~/
 sudo cp ~/.inspace/in.sh /bin/in
 sudo cp ~/.inspace/shell.sh /etc/profile.d/ 
+
+# nemo 
+sudo apt install nemo 
+sudo apt remove nautilus
+xdg-mime default nemo.desktop inode/directory application/x-gnome-saved-search
