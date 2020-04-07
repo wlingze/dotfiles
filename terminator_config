@@ -1,0 +1,24 @@
+[global_config]
+  broadcast_default = off
+  enabled_plugins = LaunchpadBugURLHandler, LaunchpadCodeURLHandler, APTURLHandler, TerminalShot
+  title_use_system_font = False
+  title_font = Monaco 17
+[keybindings]
+[profiles]
+  [[default]]
+    background_color = "#002b36"
+    background_darkness = 0.25
+    cursor_color = "#aaaaaa"
+    foreground_color = "#eeeeec"
+    show_titlebar = False
+    palette = "#000000:#ef2929:#73d216:#fce94f:#729fcf:#e35ae9:#55ffff:#d3d7cf:#555555:#ff5555:#55ff55:#fce94f:#5555ff:#ff55ff:#55ffff:#ffffff"
+[layouts]
+  [[default]]
+    [[[child1]]]
+      parent = window0
+      type = Terminal
+      profile = default
+    [[[window0]]]
+      parent = ""
+      type = Window
+[plugins]
