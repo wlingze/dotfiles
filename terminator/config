@@ -1,0 +1,79 @@
+[global_config]
+  broadcast_default = off
+  enabled_plugins = LaunchpadBugURLHandler, LaunchpadCodeURLHandler, APTURLHandler, TerminalShot
+  title_use_system_font = False
+  title_font = Monaco 17
+[keybindings]
+  zoom_in = None
+  zoom_out = None
+  zoom_normal = None
+  new_tab = None
+  cycle_next = None
+  cycle_prev = None
+  go_next = None
+  go_prev = None
+  go_up = None
+  go_down = None
+  go_left = None
+  go_right = None
+  rotate_cw = None
+  rotate_ccw = None
+  split_horiz = None
+  split_vert = None
+  close_term = None
+  copy = <Primary><Shift>c
+  toggle_scrollbar = None
+  search = None
+  close_window = None
+  resize_up = None
+  resize_down = None
+  resize_left = None
+  resize_right = None
+  move_tab_right = None
+  move_tab_left = None
+  toggle_zoom = None
+  scaled_zoom = None
+  next_tab = None
+  prev_tab = None
+  reset = None
+  reset_clear = None
+  hide_window = None
+  group_all = None
+  group_all_toggle = None
+  ungroup_all = None
+  group_tab = None
+  group_tab_toggle = None
+  ungroup_tab = None
+  new_window = None
+  new_terminator = None
+  broadcast_off = None
+  broadcast_group = None
+  broadcast_all = None
+  insert_number = None
+  insert_padded = None
+  edit_window_title = None
+  edit_tab_title = None
+  edit_terminal_title = None
+  layout_launcher = None
+  next_profile = None
+[profiles]
+  [[default]]
+    background_color = "#002b36"
+    background_darkness = 0.08
+    cursor_shape = ibeam
+    cursor_color = "#aaaaaa"
+    font = Monaco 14
+    foreground_color = "#eeeeec"
+    show_titlebar = False
+    palette = "#000000:#ef2929:#73d216:#fce94f:#729fcf:#e35ae9:#55ffff:#d3d7cf:#555555:#ff5555:#55ff55:#fce94f:#5555ff:#ff55ff:#55ffff:#ffffff"
+    use_system_font = False
+[layouts]
+  [[default]]
+    [[[child1]]]
+      parent = window0
+      type = Terminal
+      profile = default
+    [[[window0]]]
+      parent = ""
+      type = Window
+[plugins]
