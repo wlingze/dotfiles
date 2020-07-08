@@ -23,12 +23,14 @@ alias P='ps -elf| grep '
 
 alias t='terminator'
 
+
 # git 
 alias gin='git init'
 alias ga='git add'
 alias gaa='git add --all'
 alias gcm='git commit -m'
 alias gst='git status'
+alias gc='git clone'
 
 # pacman 
 alias _p='sudo pacman '
@@ -55,3 +57,8 @@ alias py='python'
 alias pi='pip install'
 alias pu='pip unstall'
 alias ipy='ipython'
+
+# golang 
+alias gb='go build'
+alias gr='go run'
+alias cgo='go tool cgo'
