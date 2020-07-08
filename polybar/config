@@ -14,18 +14,13 @@ margin-bottom = 0
 margin-top = 0
 
 [bar/top]
-; monitor = eDP-1
 ; background = #D03d3c3b
-background = #DF343332
-foreground = #b6a49b
+background = #282a36
+foreground = #f3f4f5
 width = 100%
-height = 27
-#offset-x = 0
-#offset-y = 10
+height = 37
 fixed-centered = true
 
-#background = #ee1d1d1d
-#foreground = #ccfafafa
 linecolor = #b0a090
 
 separator = "|"
@@ -66,16 +61,16 @@ module-margin-left = 1
 module-margin-right = 1
 
 ; font-0 = ypn envypn:size=10;0
-font-2 = Monaco:size=12;0
-font-1 = FontAwesome:size=12;0
-font-3 = WenQuanYi Mirco Hei:size=12;-1
-font-4 = Google Sans:size=12;0
-font-5 = Source Code Pro for Powerline:size=12;0
-font-6 = DejaVu Serif Condensed:size=12;0
-font-7 = Spectral:size=12;0
-font-8 = Cantarell:size=12;0
-font-9 = SF Pro Display:size=12;0
-font-0 = DejaVu Sans Mono:style=Bold:size=12;0
+font-2 = Monaco:size=14;0
+font-1 = FontAwesome:size=14;0
+font-3 = WenQuanYi Mirco Hei:size=14;-1
+font-4 = Google Sans:size=14;0
+font-5 = Source Code Pro for Powerline:size=14;0
+font-6 = DejaVu Serif Condensed:size=14;0
+font-7 = Spectral:size=14;0
+font-8 = Cantarell:size=14;0
+font-9 = SF Pro Display:size=14;0
+font-0 = DejaVu Sans Mono:style=Bold:size=14;0
 
 modules-left = i3 
 modules-right = filesystem xbacklight volume memory cpu battery date
@@ -167,7 +162,7 @@ time-alt = %Y-%m-%d
 ; use font-4 for time date
 ;label-font = 6
 label = %time%
-label-foreground = #3399ff
+label-foreground = #f3f4f5
 ;label-font = 3
 ;label-background = #DF3f3f3f
 label-underline = #3399ff
@@ -542,11 +537,11 @@ label-mode-background = #e60053
 ;   %output%
 ; Default: %icon%  %name%
 label-focused = %name%
-label-focused-foreground = #efdfaf
+label-focused-foreground = #ccccff
 label-focused-background = #3f3f3f
-label-focused-underline = #fba922
+label-focused-underline = #cc33ff
 label-focused-padding = 1
-label-focused-font = 9
+label-focused-font = 10
 
 ; Available tokens:
 ;   %name%
