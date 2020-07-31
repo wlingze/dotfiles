@@ -40,9 +40,13 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
+set $up k
+set $down j
+set $left h
+set $right l
 
 # start a terminal
-bindsym $mod+Return exec terminator
+bindsym $mod+Return exec alacritty
 
 # kill focused window
 bindsym $mod+q kill
@@ -54,10 +58,10 @@ bindsym $mod+q kill
 # bindsym $mod+p exec --no-startup-id i3-dmenu-desktop
 
 # change focus
-bindsym $mod+h focus left
-bindsym $mod+j focus down
-bindsym $mod+k focus up
-bindsym $mod+l focus right
+bindsym $mod+$left focus left
+bindsym $mod+$down focus down
+bindsym $mod+$up focus up
+bindsym $mod+$right focus right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -66,10 +70,10 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # move focused window
-bindsym $mod+Shift+h move left
-bindsym $mod+Shift+j move down
-bindsym $mod+Shift+k move up
-bindsym $mod+Shift+l move right
+bindsym $mod+Shift+$left move left
+bindsym $mod+Shift+$down move down
+bindsym $mod+Shift+$up move up
+bindsym $mod+Shift+$right move right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
@@ -77,8 +81,9 @@ bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
-bindsym $mod+Tab workspace next
-bindsym $mod+Shift+Tab workspace prev
+# move workspace between screens
+bindsym $mod+Shift+p move workspace to output right
+bindsym $mod+Shift+n move workspace to output left
 
 # split in horizontal orientation
 bindsym $mod+semicolon  split h
@@ -158,10 +163,10 @@ mode "resize" {
         # Pressing right will grow the window’s width.
         # Pressing up will shrink the window’s height.
         # Pressing down will grow the window’s height.
-        bindsym h resize shrink width 10 px or 10 ppt
-        bindsym j resize grow height 10 px or 10 ppt
-        bindsym k resize shrink height 10 px or 10 ppt
-        bindsym l resize grow width 10 px or 10 ppt
+        bindsym $left       resize shrink width 10 px or 10 ppt
+        bindsym $down       resize grow height 10 px or 10 ppt
+        bindsym $up         resize shrink height 10 px or 10 ppt
+        bindsym $right      resize grow width 10 px or 10 ppt
 
         # same bindings, but for the arrow keys
         bindsym Left resize shrink width 10 px or 10 ppt
@@ -192,27 +197,11 @@ client.placeholder      #282A36 #282A36 #F8F8F2 #282A36   #282A36
 
 client.background       #F8F8F2
 
-# bar {
-#   colors {
-#     background #282A36
-#     statusline #F8F8F2
-#     separator  #44475A
-# 
-#     focused_workspace  #44475A #44475A #F8F8F2
-#     active_workspace   #282A36 #44475A #F8F8F2
-#     inactive_workspace #282A36 #282A36 #BFBFBF
-#     urgent_workspace   #FF5555 #FF5555 #F8F8F2
-#     binding_mode       #FF5555 #FF5555 #F8F8F2
-#   }
-#    position top
-# }
-# 
-
-
 new_window none
 new_float normal
 
 hide_edge_borders both
+
 exec --no-startup-id nm-applet
 exec --no-startup-id xfce4-power-manager
 exec --no-startup-id pamac-tray
@@ -225,8 +214,6 @@ exec redshift &
 
 exec --no-startup-id fcitx-autostart
 
-
-
 bindsym $mod+Shift+s  --release exec /usr/bin/flameshot gui
 bindsym $mod+c exec "chromium"
 bindsym $mod+o exec "thunar"
@@ -237,8 +224,9 @@ for_window [class="Manjaro Settings Manager"] floating enable border normal
 for_window [class="(?i)virtualbox"] floating enable border normal
 for_window [class="flameshot"] floating enable
 for_window [class="wine"] floating enable
+for_window [class="discord"] floating enable
+for_window [class="telegram-desktop"] floating enable
 
-# gaps inner 15
 
 bindsym $mod+Shift+x mode "$mode_system"
 set $mode_system System (l) lock, (o) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
@@ -253,4 +241,25 @@ mode "$mode_system" {
     bindsym Escape mode "default"
 }
 
-exec --no-startup-id xset dpms 100
+exec --no-startup-id xset dpms 200 666
+#
+#############################
+### settings for i3-gaps: ###
+#############################
+
+# Set inner/outer gaps
+gaps inner 14
+gaps outer -2
+
+# Additionally, you can issue commands with the following syntax. This is useful to bind keys to changing the gap size.
+# gaps inner|outer current|all set|plus|minus <px>
+# gaps inner all set 10
+# gaps outer all plus 5
+
+# Smart gaps (gaps used if only more than one container on the workspace)
+smart_gaps on
+
+# Smart borders (draw borders around container only if it is not the only container on this workspace)
+# on|no_gaps (on=always activate and no_gaps=only activate if the gap size to the edge of the screen is 0)
+smart_borders on
+
