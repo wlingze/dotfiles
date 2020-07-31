@@ -12,6 +12,8 @@ alias la='ls -lah'
 
 alias vi='vim'
 alias v='vim'
+alias vf='vimdiff'
+alias vsc='code'
 
 alias ls='exa --color=auto' 
 alias grep='grep --color'
@@ -23,6 +25,7 @@ alias P='ps -elf| grep '
 
 alias t='terminator'
 
+alias duc='du -h  --max-depth=1 ./'
 
 # git 
 alias gin='git init'
@@ -62,3 +65,4 @@ alias ipy='ipython'
 alias gb='go build'
 alias gr='go run'
 alias cgo='go tool cgo'
+

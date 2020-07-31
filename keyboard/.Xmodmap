@@ -1,0 +1,22 @@
+! 把esc键更换为Caps_Lock
+keycode 9 = Caps_Lock NoSymbol Caps_Lock
+
+!把Caps_Lock键更换为esc
+keycode 66 = Escape NoSymbol Escape
+
+! 把Control_L键更换为Alt_L键
+keycode 37 = Alt_L Meta_L Alt_L Meta_L
+
+! 把Alt_L键更换为Control_L
+keycode 64 = Control_L NoSymbol Control_L 
+
+
+
+clear shift
+clear lock
+clear control
+clear mod1
+add shift = Shift_L Shift_R
+add lock = Caps_Lock
+add control = Control_L Control_R
+add mod1 = Alt_L Alt_R Meta_L

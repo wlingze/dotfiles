@@ -34,6 +34,7 @@ set t_Co=256
 set relativenumber
 set mouse+=a 
 
+autocmd BufNewFile exp.py 0r ~/.vim/autoload/pwn.tem
 
 " vim script function
 
