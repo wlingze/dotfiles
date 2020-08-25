@@ -1,0 +1,40 @@
+unmap x
+unmap X
+unmap t
+unmap T
+unmap b 
+unmap B
+unmap o
+unmap O
+unmap ^ 
+unmap g0
+unmap g$
+unmap yt
+unmap gT
+unmap gt
+unmap p
+unmap <a-p>
+unmap <a-m>
+unmap /
+unmap <c-e>
+unmap <c-y>
+unmap j 
+unmap k
+unmap d 
+unmap u
+unmap J
+unmap K 
+unmap H
+unmap L 
+unmap h
+unmap l
+map n scrollPageDown
+map e scrollPageUp
+map h scrollLeft
+map i scrollRight
+map N scrollFullPageDown
+map E scrollFullPageUp
+map H previousTab
+map I nextTab
+map l goBack
+map k goForward
