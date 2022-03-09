@@ -1,20 +1,8 @@
 " plug 
 "
-call plug#begin('~/.vim/plugged')
-
-Plug 'vim-airline/vim-airline'
-Plug 'wakatime/vim-wakatime',{'as':'waaktime'}
-Plug 'https://github.com/aperezdc/vim-template.git', {'as':'template'}
-Plug 'honza/vim-snippets'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'itchyny/vim-cursorword', {'as':'cursorword'}
-Plug 'dracula/vim', { 'as': 'dracula' }
-
-call plug#end()
-
 
 " configuratoin 
-colorscheme dracula
+" colorscheme dracula
 syntax on 
 set scrolloff=5
 set showcmd
@@ -43,32 +31,15 @@ set relativenumber
 set mouse+=a 
 exec "nohlsearch"
 
-autocmd BufNewFile exp.py 0r ~/.vim/autoload/pwn.tem
 
 " vim key 
 
-let mapleader=" "
-" set guicursor="n-v-c:block-Cursor/lCursor, ve:ver35-Cursor,o:hor50-Cursor,i-ci:ver25-Cursor/lCursor,r-cr:hor20-Cursor/lCursor,sm:block-Cursor-blinkwait175-blinkoff150-blinkon175"
+
 
 let &t_SI.="\e[5 q" "SI = INSERT mode
 let &t_SR.="\e[4 q" "SR = REPLACE mode
 let &t_EI.="\e[1 q" "EI = NORMAL mode (ELSE)
 
-let g:airline_powerline_fonts = 1
-
-if !exists('g:airline_symbols')
-    let g:airline_symbols = {}
-endif
-
-let g:airline_left_sep = ''
-let g:airline_left_alt_sep = ''
-let g:airline_right_sep = ''
-let g:airline_right_alt_sep = '|'
-let g:airline_symbols.branch = 'g:'
-let g:airline_symbols.readonly = 'R!'
-let g:airline_symbols.linenr = 'L:'
-let g:airline_symbols.maxlinenr = ',C'
-let g:airline_symbols.dirty='D'
 " colemak
 
 " ===
