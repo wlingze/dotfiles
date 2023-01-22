@@ -42,8 +42,32 @@ zinit light zsh-users/zsh-completions
 zinit ice lucid wait="0" atload='_zsh_autosuggest_start'
 zinit light zsh-users/zsh-autosuggestions
 
-source /home/wlz/Documents/dotfiles/zsh/func.zsh
-source /home/wlz/Documents/dotfiles/zsh/alias.zsh
+zstyle ':completion:*' matcher-list '' \
+  'm:{a-z\-}={A-Z\_}' \
+  'r:[^[:alpha:]]||[[:alpha:]]=** r:|=* m:{a-z\-}={A-Z\_}' \
+  'r:|?=** m:{a-z\-}={A-Z\_}'
+
+# fzf for history
+zinit ice lucid wait'0'
+zinit light joshskidmore/zsh-fzf-history-search
+
+zinit light Aloxaf/fzf-tab
+# kill 结束进程时时提供预览
+# disable sort when completing `git checkout`
+zstyle ':completion:*:git-checkout:*' sort false
+# set descriptions format to enable group support
+zstyle ':completion:*:descriptions' format '[%d]'
+# set list-colors to enable filename colorizing
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+zstyle ':completion:*:*:*:*:processes' command "ps -u $USER -o pid,user,comm,cmd -w -w"
+zstyle ':fzf-tab:complete:kill:argument-rest' fzf-preview 'ps --pid=$word -o cmd --no-headers -w -w'
+zstyle ':fzf-tab:complete:kill:argument-rest' fzf-flags '--preview-window=down:3:wrap'
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'exa -1 --color=always $realpath'
+zstyle ':fzf-tab:complete:cd:*' popup-pad 30 0
+zstyle ':fzf-tab:*' fzf-command ftb-tmux-popup
+
+# cd 时在右侧预览目录内容
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'exa -1 --color=always $realpath'
 
 HISTFILE=~/.histfile
 HISTSIZE=10000
@@ -53,6 +77,16 @@ SAVEHIST=10000
 setopt hist_ignore_all_dups
 # 在命令前添加空格，不将此命令添加到记录文件中
 setopt hist_ignore_space
-# zsh 4.3.6 doesn't have this option
-setopt hist_fcntl_lock 2>/dev/null
-setopt hist_reduce_blanks
+
+export AFLPP=~/Lab/Fuzz/AFLplusplus/
+export GO_PATH=~/go
+export DynamoRio=/home/wlz/Lab/Fuzz/DynamoRIO
+
+export PATH=$PATH:/$GO_PATH/bin
+export PATH="/home/wlz/.local/bin:$PATH"
+export PATH="/home/wlz/.cargo/bin:$PATH"
+
+keep_current_path() {
+  printf "\e]9;9;%s\e\\" "$(wslpath -w "$PWD")"
+}
+precmd_functions+=(keep_current_path)

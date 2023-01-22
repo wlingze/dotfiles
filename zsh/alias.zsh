@@ -1,4 +1,5 @@
 
+alias rg="rg  --ignore-case "
 alias  ..='cd ..'
 
 alias _='sudo '
