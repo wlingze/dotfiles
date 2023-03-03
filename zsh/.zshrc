@@ -78,15 +78,3 @@ setopt hist_ignore_all_dups
 # 在命令前添加空格，不将此命令添加到记录文件中
 setopt hist_ignore_space
 
-export AFLPP=~/Lab/Fuzz/AFLplusplus/
-export GO_PATH=~/go
-export DynamoRio=/home/wlz/Lab/Fuzz/DynamoRIO
-
-export PATH=$PATH:/$GO_PATH/bin
-export PATH="/home/wlz/.local/bin:$PATH"
-export PATH="/home/wlz/.cargo/bin:$PATH"
-
-keep_current_path() {
-  printf "\e]9;9;%s\e\\" "$(wslpath -w "$PWD")"
-}
-precmd_functions+=(keep_current_path)
