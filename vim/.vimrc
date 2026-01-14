@@ -105,6 +105,9 @@ noremap <LEADER>n <C-w>j
 noremap <LEADER>h <C-w>h
 noremap <LEADER>i <C-w>l
 
+let mapleader = "\<tab>"  " map leader to Space
+
+
 " Disable the default s key
 noremap s <nop>
 

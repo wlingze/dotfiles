@@ -5,6 +5,8 @@ alias  ..='cd ..'
 alias _='sudo '
 alias __='sudo su'
 
+alias cat="bat"
+
 alias h='history'
 alias p='ps -elf'
 alias dr='tldr'
@@ -16,7 +18,7 @@ alias v='vim'
 alias vf='vimdiff'
 alias vsc='code'
 
-alias ls='exa --color=auto' 
+alias ls='eza' 
 alias grep='grep --color'
 
 alias -g G='| grep'
@@ -29,12 +31,7 @@ alias t='terminator'
 alias duc='du -h  --max-depth=1 ./'
 
 # git 
-alias gin='git init'
-alias ga='git add'
-alias gaa='git add --all'
-alias gcm='git commit -m'
-alias gst='git status'
-alias gc='git clone'
+alias g='git'
 
 # pacman 
 alias _p='sudo pacman '
