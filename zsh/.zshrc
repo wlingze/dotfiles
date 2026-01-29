@@ -25,14 +25,13 @@ zinit light-mode for \
 zinit ice compile'(pure|async).zsh' pick'async.zsh' src'pure.zsh'
 zinit light sindresorhus/pure
 
-zinit wait lucid for \
- atinit"ZINIT[COMPINIT_OPTS]=-C; zicompinit; zicdreplay" \
-    zdharma-continuum/fast-syntax-highlighting \
- blockf \
-    zsh-users/zsh-completions \
- atload"!_zsh_autosuggest_start" \
-    zsh-users/zsh-autosuggestions
-
+# zinit wait lucid for \
+#  atinit"ZINIT[COMPINIT_OPTS]=-C; zicompinit; zicdreplay" \
+#     zdharma-continuum/fast-syntax-highlighting \
+#  blockf \
+#     zsh-users/zsh-completions \
+#  atload"!_zsh_autosuggest_start" \
+#     zsh-users/zsh-autosuggestions
 zinit ice lucid wait='1'
 zinit light skywind3000/z.lua
 
@@ -64,7 +63,13 @@ zstyle ':fzf-tab:complete:kill:argument-rest' fzf-preview 'ps --pid=$word -o cmd
 zstyle ':fzf-tab:complete:kill:argument-rest' fzf-flags '--preview-window=down:3:wrap'
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'exa -1 --color=always $realpath'
 zstyle ':fzf-tab:complete:cd:*' popup-pad 30 0
-zstyle ':fzf-tab:*' fzf-command ftb-tmux-popup
+# 判断是否在 tmux 内部
+if [[ -n $TMUX ]]; then
+    zstyle ':fzf-tab:*' fzf-command ftb-tmux-popup
+else
+    # 非 tmux 环境下使用默认 fzf
+    zstyle ':fzf-tab:*' fzf-command fzf
+fi
 
 # cd 时在右侧预览目录内容
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'exa -1 --color=always $realpath'
@@ -78,3 +83,29 @@ setopt hist_ignore_all_dups
 # 在命令前添加空格，不将此命令添加到记录文件中
 setopt hist_ignore_space
 
+source ~/Document/dotfiles/zsh/alias.zsh
+source ~/Document/dotfiles/zsh/func.zsh
+alias yak="/home/wlz/Developer/yaklang/build/yak"
+
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+
+TZ='Asia/Shanghai'; export TZ
+
+
+alias antlr='java -Xmx500M -cp   /home/wlz/Developer/yaklang/common/yak/antlr4thirdparty/antlr-4.11.1-complete.jar  org.antlr.v4.Tool'
+
+
+# 别忘了填你的 API Key
+export ANTHROPIC_API_KEY="sk-ouZ9DVhKSOxKyrvDTdkRxR9Tx1cXitip8QDqmMSpMbtakD7h"
+export ANTHROPIC_AUTH_TOKEN="sk-ouZ9DVhKSOxKyrvDTdkRxR9Tx1cXitip8QDqmMSpMbtakD7h"
+export ANTHROPIC_BASE_URL=http://154.12.88.161:8318
+
+
+# opencode
+export PATH=/home/wlz/.opencode/bin:$PATH
+export PATH=~/.local/bin:$PATH
+export HOSTNAME=xa
